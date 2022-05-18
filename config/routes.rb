@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "projects#index"
+  resources :students
+  root 'pages#home'
   resources :projects
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
