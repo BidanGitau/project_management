@@ -25,9 +25,9 @@ body {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 40%;
-    left: 70%;
-    transform: translate(-60%, -40%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     font-weight: 900;
     font-size: large;
@@ -35,11 +35,11 @@ body {
 }
 
 .middle:hover .home-image {
-    opacity: 0;
+    opacity: 0.4;
 }
 
 .middle:hover .image-text {
-    opacity: 0;
+    opacity: 1;
 }
 
 .text {
@@ -51,11 +51,23 @@ body {
 
 #main-content {
     padding-bottom: 30px;
-    border-bottom: 2px solid rgba(82, 180, 133, 1);
+    border-bottom: 2px solid rgba(186, 246, 165, 1);
 }
 
 #instructor-carousel {
     position: relative;
+    background-color: #ffffff;
+}
+
+.p-1 {
+    text-shadow: 1px 1px 2px #ffffff, 0 0 25px rgba(82, 180, 133, 1), 0 0 5px rgb(0, 139, 58);
+}
+
+.description {
+    padding: 10px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 80px;
+    box-shadow: 5px 5px rgba(82, 180, 133, 1), 10px 10px rgba(186, 246, 165, 1);
 }
 
 h2 {
@@ -114,7 +126,7 @@ h2::after {
 
 .carousel .overview b {
     text-transform: uppercase;
-    color: #04AA6D;
+    color: #63b583;
 }
 
 .carousel .carousel-indicators {
@@ -131,12 +143,12 @@ h2::after {
 }
 
 .carousel-indicators li {
-    background: #0a0101;
-    border: 4px solid rgb(18, 133, 37);
+    background: #e2e2e2;
+    border: 4px solid #fff;
 }
 
 .carousel-indicators li.active {
-    color: rgb(252, 240, 240);
-    background: #04AA6D;
+    color: #fff;
+    background: #63b583;
     border: 5px double;
 }
