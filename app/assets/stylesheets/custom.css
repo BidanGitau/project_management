@@ -35,7 +35,7 @@ body {
 }
 
 .middle:hover .home-image {
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .middle:hover .image-text {
@@ -51,7 +51,7 @@ body {
 
 #main-content {
     padding-bottom: 30px;
-    border-bottom: 2px solid rgba(186, 246, 165, 1);
+    border-bottom: 2px solid rgba(82, 180, 133, 1);
 }
 
 #instructor-carousel {
@@ -59,15 +59,17 @@ body {
     background-color: #ffffff;
 }
 
-.p-1 {
+
+/* .p-1 {
     text-shadow: 1px 1px 2px #ffffff, 0 0 25px rgba(82, 180, 133, 1), 0 0 5px rgb(0, 139, 58);
-}
+} */
 
 .description {
     padding: 10px;
+    border: 1px inset rgba(82, 180, 133, 1);
     border-bottom-left-radius: 50px;
     border-top-right-radius: 80px;
-    box-shadow: 5px 5px rgba(82, 180, 133, 1), 10px 10px rgba(186, 246, 165, 1);
+    box-shadow: 1px 1px 2px #ffffff, 0 0 25px rgba(82, 180, 133, 1), 0 0 5px rgb(0, 139, 58);
 }
 
 h2 {

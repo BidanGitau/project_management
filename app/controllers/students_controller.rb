@@ -52,7 +52,7 @@ class StudentsController < ApplicationController
     @student.destroy
 
     respond_to do |format|
-      format.html { redirect_to students_url, notice: "Student was successfully destroyed." }
+      format.html { redirect_to students_url, notice: "Student was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -65,6 +65,6 @@ class StudentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def student_params
-      params.require(:student).permit(:name, :password, :email, :pojectname, :class, :instructorname)
+      params.require(:student).permit(:name, :password, :email, :pojectname, :year_of_study, :instructorname)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_18_140348) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_20_071926) do
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -23,10 +23,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_140348) do
     t.string "password"
     t.string "email"
     t.string "pojectname"
-    t.integer "class"
     t.string "instructorname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "year_of_study"
   end
 
 end
