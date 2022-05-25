@@ -1,5 +1,4 @@
-class Student < ApplicationRecord
-    has_many    :projects
+class Instructor < ApplicationRecord
     validates :name,presence:true
     validates :email,uniqueness:{case_sensitive: false}
 end

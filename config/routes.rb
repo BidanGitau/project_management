@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  resources :students,except: [:new]
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
+  resources :students
+  get 'signup', to: 'students#new'
+  post 'login', to: 'students#create'
   root 'pages#home'
   resources :projects
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
 end

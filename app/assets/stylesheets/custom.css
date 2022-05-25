@@ -154,3 +154,8 @@ h2::after {
     background: #63b583;
     border: 5px double;
 }
+
+.reg-image {
+    object-fit: cover;
+    display: none;
+}
