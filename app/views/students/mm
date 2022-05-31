@@ -1,0 +1,11 @@
+
+  <%= render @student %>
+
+<div>
+  <%= link_to "Edit this student", edit_student_path(@student) %> |
+ <li class="nav-item">
+          <%=link_to "[ logout ]",logout_path,  data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} ,class:"nav-link"%>
+        </li>
+
+  <%=link_to "Destroy this student", @student, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>

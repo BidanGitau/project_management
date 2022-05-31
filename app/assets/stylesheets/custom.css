@@ -159,3 +159,70 @@ h2::after {
     object-fit: cover;
     display: none;
 }
+
+.s-title {
+    margin-top: 5px;
+}
+
+.main-dash {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.side-bar {
+    margin-left: -10px;
+    height: 100vh;
+    width: 180px;
+    padding: 10px;
+    border-top: 10px;
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.side-line {
+    border: 3px solid rgba(82, 180, 133, 1);
+}
+
+.element-text {
+    font-weight: bolder;
+}
+
+.s-group {
+    border: 1px inset rgb(26, 141, 86);
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgb(10, 9, 9);
+}
+
+.icon-color {
+    color: rgba(82, 180, 133, 1);
+}
+
+.card-color {
+    background-color: white !important;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    grid-area: sidenav;
+    background-color: white;
+    margin-left: 20px;
+}
+
+.sidenav__list {
+    padding: 20px;
+    list-style-type: none;
+}
+
+.image-r {
+    height: 150px;
+    object-fit: contain;
+    color: #000;
+}
+
+.profile-name {
+    font-weight: bold;
+    font-style: oblique;
+}

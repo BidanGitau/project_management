@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :students
   get 'signup', to: 'students#new'
-  post 'login', to: 'students#create'
+  resources :students, expect: [:new]
   root 'pages#home'
-  resources :projects
+   get 'projects', to: 'pages#project_idea'
+  # resources :projects
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
   
 end

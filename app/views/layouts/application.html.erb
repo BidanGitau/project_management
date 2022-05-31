@@ -8,14 +8,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
   </head>
 
   <body >
-  <div class="header" > 
-
-   <%= render 'layouts/navigation' %>
-  </div>
+  
     <%= yield %>
   
   </body>
