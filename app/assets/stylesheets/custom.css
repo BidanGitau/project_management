@@ -226,11 +226,18 @@ h2::after {
     font-weight: bold;
     font-style: oblique;
 }
-.link-nav{
-text-decoration: none;
-color: inherit;
-text-transform: capitalize;
+
+.link-nav {
+    text-decoration: none;
+    color: inherit;
+    text-transform: capitalize;
 }
-.link-nav:hover{
-  color:green;
+
+.link-nav:hover {
+    color: green;
+}
+
+.image-u {
+    max-width: 150px;
+    max-height: 150px
 }

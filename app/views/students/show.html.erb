@@ -1,70 +1,74 @@
-
 <section class="dash-stud">
-     <div class="container-fluid d-flex">
-       <div class="side-bar ">
-          <div class="s-title justify-items-center  text-center jjustify-content-between align-items-center">
-          <%=image_tag 'logos/logo.png'%>
+    <div class="container-fluid d-flex">
+        <div class="side-bar ">
+            <div class="s-title justify-items-center  text-center jjustify-content-between align-items-center">
+                <%=image_tag 'logos/logo.png'%>
 
-         </div>
-       <hr class="side-line">
-      <div class="text-black flex-row">
-        <div class="s-group p-3 mb-4 d-flex justify-items-center align-items-center "><i class=" fa fa-solid fa-list-ul fa-2x icon-color"> </i> <span class="p-2 element-text">Todos</span></div>
-        <div class="s-group p-3 mb-4 d-flex justify-items-center align-items-center"><i class=" fa fa-solid fa-bell  fa-2x icon-color"> </i> <span class="p-2 element-text">submission</span></div>
-        <div class="s-group p-3 mb-4 d-flex justify-items-center align-items-center"><i class=" fa fa-solid fa-folder  fa-2x icon-color"> </i> <span class="p-2 element-text">Notification</span></div>
-        <div class="s-group p-3 mb-4 d-flex  text-center justify-items-center align-items-center"><i class=" fa fa-solid fa-user  fa-2x icon-color"> </i> <span class="p-2 element-text">user</span></div>
+            </div>
+            <hr class="side-line">
+            <div class="text-black flex-row">
+                <div class="s-group p-3 mb-4 d-flex justify-items-center align-items-center "><i class=" fa fa-solid fa-list-ul fa-2x icon-color"> </i> <span class="p-2 element-text">Todos</span></div>
+                <div class="s-group p-3 mb-4 d-flex justify-items-center align-items-center"><i class=" fa fa-solid fa-bell  fa-2x icon-color"> </i> <span class="p-2 element-text">submission</span></div>
+                <div class="s-group p-3 mb-4 d-flex justify-items-center align-items-center"><i class=" fa fa-solid fa-folder  fa-2x icon-color"> </i> <span class="p-2 element-text">Notification</span></div>
+                <div class="s-group p-3 mb-4 d-flex  text-center justify-items-center align-items-center"><i class=" fa fa-solid fa-user  fa-2x icon-color"> </i> <span class="p-2 element-text">user</span></div>
 
-      </div>
-     </div>
-
-      <div class="main-dash w-100 ml-2">
-        <% flash.each do |type, msg| %>
-          <div class="alert alert-info">
-            <%= msg %>
-          </div>
-        <% end %>
-         <div class="card pl-2 ">
-            <div class="card-header card-color">
-             <div class="header-t d-flex align-content-center justify-content-between  mt-2">
-          <div class="time">
-          <p class="lead"> Student  Dashboard</p>
-          </div>
-          <div class="time">
-          2 May  20221, Wednesday
-
-          </div>
-       </div>
-      </div>
-      </div>
-        <%# maincon %>
-      <div class="welcome-stat" >
-       <div class="card mt-1 " >
-
-        <div class="card-body d-flex align-content-center justify-content-around p-0">
-          <div class="content pt-5">
-          <h6 class="card-title ">Your Profile Stats on  <span style="text-transform:UpperCase;font-weight:900">  <%= @student.pojectname %>  Project</span></h6>
-          <p class="card-text"><span class="profile-name"><%= current_student.name%></span> ,you have completed 40% of your project documentation.Keep up you almost done</p>
-          </div>
-          <div class="image " >
-             <%=image_tag 'home/regi.png',class:"image-r"%>
-          </div>
+            </div>
         </div>
-      </div>
 
-      </div>
+        <div class="main-dash w-100 ml-2">
+            <% flash.each do |type, msg| %>
+                <div class="alert alert-info">
+                    <%= msg %>
+                </div>
+                <% end %>
+                    <div class="card pl-2 ">
+                        <div class="card-header card-color">
+                            <div class="header-t d-flex align-content-center justify-content-between  mt-2">
+                                <div class="time">
+                                    <p class="lead"> Student Dashboard</p>
+                                </div>
+                                <div class="time">
+                                    2 May 20221, Wednesday
 
-      <div  id="projects">
-          <%= link_to "New project", new_project_path() %>
-          <%= render 'projects/project'%>
-      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%# maincon %>
+                        <div class="welcome-stat">
+                            <div class="card mt-1 ">
 
-      </div>
+                                <div class="card-body d-flex align-content-center justify-content-around p-0">
+                                    <div class="content pt-5">
+                                        <h6 class="card-title ">Your Profile Stats on <span style="text-transform:UpperCase;font-weight:900">  <%= @student.pojectname %>  Project</span></h6>
+                                        <p class="card-text"><span class="profile-name"><%= current_student.name%></span> ,you have completed 40% of your project documentation.Keep up you almost done</p>
+                                    </div>
+                                    <div class="image ">
+                                        <%=image_tag 'home/regi.png',class:"image-r"%>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="projects">
+
+                            <%= render 'projects/form',project: @project%>
+                        </div>
 
 
-    <aside class="sidenav side-bar">
+                        <div id="projects">
 
-    <div class="s-group p-3 mb-4 d-flex sidenav__list-item  text-center justify-items-center align-items-center"><i class="  fa fa-solid fa-sign-out  fa-2x icon-color"> </i> <span class="p-2 element-text"> <%=link_to " logout",logout_path, class:"link-nav", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></span></div>
+                            <%= render 'projects/project'%>
+                        </div>
+
+        </div>
 
 
-</aside>
+        <aside class="sidenav side-bar">
 
-    </section>
+            <div class="s-group p-3 mb-4 d-flex sidenav__list-item  text-center justify-items-center align-items-center"><i class="  fa fa-solid fa-sign-out  fa-2x icon-color"> </i> <span class="p-2 element-text"> <%=link_to " logout",logout_path, class:"link-nav", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></span></div>
+
+
+        </aside>
+
+</section>

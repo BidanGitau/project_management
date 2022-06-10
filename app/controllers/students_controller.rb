@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   end
   def show
     @projects=@student.projects
+    @project = Project.new
   end
   def create
     @student = Student.new(student_params)

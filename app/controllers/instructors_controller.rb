@@ -1,7 +1,9 @@
 class InstructorsController < ApplicationController
     def new
+        @instructor = Instructor.new
       end
-    def index
-      instructors=Instructor.all
-    end
+      def show
+       
+      end
+      
 end

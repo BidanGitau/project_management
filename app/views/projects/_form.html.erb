@@ -1,35 +1,40 @@
 <%= form_with(model: @project) do |form| %>
-  <% if project.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+    <% if project.errors.any? %>
+        <div style="color: red">
+            <h2>
+                <%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-        <% project.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+            <ul>
+                <% project.errors.each do |error| %>
+                    <li>
+                        <%= error.full_message %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+            <div class="container d-flex justify-content-between  align-content-center mb-4">
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+                <div class="mb-3">
+                    <%= form.label :title, style: "display: block",class:"form-label" %>
+                        <%= form.text_field :title ,class:"form-control " %>
+                </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-  <div>
-    <div class="mb-6">
-    <%= form.label :document_upload, class: "label" %>
-    <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1">
-    <%= form.file_field :document_upload, direct_upload: true, data: { target: 'dropzone.input' } %>
-    </div>
-  </div>
-  </div>
+                <div>
+                    <%= form.label :description, style: "display: block" %>
+                        <%= form.text_area :description,class:"form-control"%>
+                </div>
+                <div>
+                    <div class="mb-6">
+                        <%= form.label :document_upload, class: "label" %>
+                            <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1">
+                                <%= form.file_field :document_upload, direct_upload: true, data: { target: 'dropzone.input' } %>
+                            </div>
+                    </div>
+                </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+                <div>
+                    <%= form.submit "project Upload",class:"btn btn-outline-success" %>
+                </div>
+            </div>
+            <% end %>

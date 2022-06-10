@@ -1,80 +1,103 @@
+<section class="h-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-12">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="card-body">
 
-<div class="row ">
+                                <div class="text-center">
+                                    <%= image_tag("logos/logo.png",:class=>"h") %>
+                                        <h4 class="">Students Portal</h4>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <% if student.errors.any? %>
+                                        <div style="color: red">
+                                            <h2 class="lead text-sm">
+                                                <%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
-  <div class="col-md-12 m-6 p-6">
+                                            <ul>
+                                                <% student.errors.each do |error| %>
+                                                    <li class="text-sm">
+                                                        <%= error.full_message %>
+                                                    </li>
+                                                    <% end %>
+                                            </ul>
+                                        </div>
+                                        <% end %>
+                                </div>
+                                <%= form_with(model: @instructor , class:"row g-3  p-1 mt-3  ") do |form|  %>
+                                    <p>Please Register to your account</p>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-2">
+                                            <div class="form-outline ">
+                                                <%= form.label :name, {class: "form-label"}%>
+                                                    <%= form.text_field :name ,{class: "form-control"} %>
 
-    <%= form_with(model: instructor , class:"row g-3  p-1 mt-3  ") do |form|  %>
-    
-      <div class="col-md-6 ">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2 ">
+                                            <div class="form-outline ">
+                                                <%= form.label :email,{class: "form-label"}%>
 
-        <%= form.label :name, {class: "form-label"}%>
-        <%= form.text_field :name ,{class: "form-control"} %>
+                                                    <%=form.email_field :email, class: "form-control"%>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-outline mb-2">
+                                                <%=form.label :password, {class: "form-label"}%>
 
-      </div>
+                                                    <%=form.password_field :password ,{class: "form-control"} %>
+                                            </div>
+                                        </div>
 
-      <div class="col-md-6">
+                                        <div class="col-md-6 ">
+                                            <div class="form-outline mb-2">
+                                                <%=form.label :pojectname,{class: "form-label"}%>
 
-        <%= form.label :email,{class: "form-label"}%>
+                                                    <%=form.text_field :pojectname, {class: "form-control"} %>
 
-        <%=form.email_field :email, class: "form-control"%>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 ">
+                                            <div class="form-outline mb-4">
+                                                <%=form.label :year_of_study, {class: "form-label"}%>
 
-      </div>
+                                                    <%=form.text_field :year_of_study, {class: "form-control"}%>
 
-      <div class="col-md-6">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline mb-2">
+                                                <%=form.label :instructorname, {class: "form-label"}%>
 
-        <%=form.label :password, {class: "form-label"}%>
+                                                    <%=form.text_field :instructorname, {class: "form-control"}%>
 
-        <%=form.password_field :password ,{class: "form-control"} %>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="text-center pt-1 mb-3 pb-1">
 
-      </div>
+                                                <%= form.submit "Create Account" , class: "btn btn-outline-success btn-block" %>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center pb-4">
+                                            <p class="mb-0 me-2">Already have an account?</p>
+                                            <button type="button" class="btn btn-outline-success"><%=link_to "Log in ",login_path, class:"nav-link"%></button>
+                                        </div>
+                                    </div>
+                                    <%end%>
 
-       
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center text-center log-text ">
+                            <%= image_tag("home/regi.png",:class=>"img-fluid")%>
 
-      <div class="col-md-6">
-
-        <%=form.label :instructorname, {class: "form-label"}%>
-
-        <%=form.text_field :instructorname, {class: "form-control"}%>
-
-      </div>
-
-           <div class="col-md-6">
-
-        <%= form.submit "Submit", class: "btn btn-outline-success" %>
-
-      </div>
-
-      <%end%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
- 
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</section>

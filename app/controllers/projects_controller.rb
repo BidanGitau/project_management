@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :set_project, only: %i[ show  destroy ]
 
   # GET /projects or /projects.json
   def index
@@ -12,13 +12,12 @@ class ProjectsController < ApplicationController
   end
 
   # GET /projects/new
-  def new
-    @project = Project.new
-  end
+  # def new
+  #   @project = Project.new
+  # end
 
   # GET /projects/1/edit
-  def edit
-  end
+ 
 
   # POST /projects or /projects.json
   def create
@@ -30,31 +29,32 @@ class ProjectsController < ApplicationController
         format.html { redirect_to student_path(@project.student), notice: "Project was successfully created." }
         format.json { render :show, status: :created, location: @project }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to student_path(@project.student), alert: "Enter full details.",status: :see_other}
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /projects/1 or /projects/1.json
-  def update
-    respond_to do |format|
-      if @project.update(project_params)
-        format.html { redirect_to projects_url, notice: "Project was successfully updated.",status: :see_other}
-        format.json { render :show, status: :ok, location: @project }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /projects/1 or /projects/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @project.update(project_params)
+  #       format.html { redirect_to projects_url, notice: "Project was successfully updated.",status: :see_other}
+  #       format.json { render :show, status: :ok, location: @project }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @project.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /projects/1 or /projects/1.json
   def destroy
     @project.destroy
 
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: "Project was successfully destroyed.",status: :see_other}
+
+      format.html { redirect_to student_path(@project.student), alert: "Project was successfully destroyed.",status: :see_other}
       format.json { head :no_content }
     end
   end
