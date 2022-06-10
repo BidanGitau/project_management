@@ -1,0 +1,23 @@
+<%= form_with(model: @project) do |form| %>
+  
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone">
+    <%= form.label :Document_upload, style: "display: block" %>
+    <%= form.file_field :image %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

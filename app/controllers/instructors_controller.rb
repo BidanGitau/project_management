@@ -1,6 +1,7 @@
-class InstructorsController < ApplicationRecord
-    def new 
-        @instructor=Instructor.all
+class InstructorsController < ApplicationController
+    def new
+      end
+    def index
+      instructors=Instructor.all
     end
-    
 end

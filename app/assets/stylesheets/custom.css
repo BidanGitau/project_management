@@ -226,3 +226,11 @@ h2::after {
     font-weight: bold;
     font-style: oblique;
 }
+.link-nav{
+text-decoration: none;
+color: inherit;
+text-transform: capitalize;
+}
+.link-nav:hover{
+  color:green;
+}

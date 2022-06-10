@@ -1,4 +1,6 @@
 class Student < ApplicationRecord
+    before_save { self.email = email.downcase }
+    has_many  :projects
     validates :name,presence:true
     validates :password,presence:true
     validates :pojectname,presence:true
