@@ -4,3 +4,4 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 
 import './add_jquery'
+import "./channels"
